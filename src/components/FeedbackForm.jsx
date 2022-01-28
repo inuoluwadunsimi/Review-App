@@ -46,7 +46,7 @@ function FeedbackForm({handleAdd}) {
                 <h2>How will you rate your service with us?</h2>
                 <RatingSelect select={(rating)=>setRating(rating)}/>
                 <div className="input-group">
-                    <input type="text" placeholder="Write a reveiw" onChange={handleTextChange} value={text} />
+                    <input type="text" placeholder="Write a review" onChange={handleTextChange} value={text} />
                     <Button type="submit" isDisabled={btnDisabled}>
                         Send
                         </Button>

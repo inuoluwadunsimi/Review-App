@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
+// import useLocalStorage from './hooks/useLocalStroge';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
@@ -6,14 +7,16 @@ import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
 import Header from "./components/Header";
 import FeedbackData from "./data/FeedbackData";
+import AboutIconLink from './components/AboutIconLink';
 import AboutPage from './pages/AboutPage';
 
 function App()  {
+    // const storedFeedback=JSON.parse(localStorage.getItem('feedback'))
     const [feedback, setFeedback] = useState(FeedbackData)
-
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4()
         setFeedback([newFeedback, ...feedback])
+        // localStorage.setItem('feedback',JSON.stringify([newFeedback,...feedback]))
         
     }
 
@@ -40,6 +43,8 @@ function App()  {
 
                 <Route path="/about" element={<AboutPage/>}/>
             </Routes>
+            <AboutIconLink/>
+
         </div>
         </Router>
     )
