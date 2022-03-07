@@ -1,5 +1,4 @@
 
-// import useLocalStorage from './hooks/useLocalStroge';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackList from "./components/FeedbackList";
@@ -10,9 +9,7 @@ import AboutPage from './pages/AboutPage';
 import {FeedbackProvider} from './context/FeedbackContext'
 
 function App()  {
-    // const storedFeedback=JSON.parse(localStorage.getItem('feedback'))
-   
-
+    
     
     return(
      <FeedbackProvider>
@@ -29,7 +26,16 @@ function App()  {
                 }>
                     
                 </Route>
-
+                <Route  path='/Review-' element={
+                    <>
+                        <FeedbackForm />
+                        <FeedbackStats />
+                        <FeedbackList />
+                    </>
+                }>
+                    
+                </Route>
+                 
                 <Route path="/about" element={<AboutPage/>}/>
             </Routes>
             <AboutIconLink/>

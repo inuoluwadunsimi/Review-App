@@ -9,7 +9,7 @@ export const FeedbackProvider = ({children}) =>{
 
        const [feedbackEdit,setFeedbackEdit] = useState({
            item:{},
-           edit:false
+           edit:false,
        })
 
        useEffect(()=>{
