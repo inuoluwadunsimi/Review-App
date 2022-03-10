@@ -26,7 +26,7 @@ function App()  {
                 }>
                     
                 </Route>
-                <Route  path='/Review-' element={
+                <Route  path='/Review-App' element={
                     <>
                         <FeedbackForm />
                         <FeedbackStats />
